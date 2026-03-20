@@ -48,7 +48,7 @@ public class Exponentiation {
         if (LOCAL) {
             br = new BufferedReader(new FileReader("../input.txt"));
         }
-        int t = nextInt(); // change to nextInt() for multiple test cases
+        int t = 1; // change to nextInt() for multiple test cases
         while (t-- > 0)
             solve();
         out.print(sb);
@@ -56,20 +56,37 @@ public class Exponentiation {
     }
 
     static void solve() throws Exception {
-        long a = nextInt();
-        long b = nextInt();
-        sb.append(pow(a, b,MOD)).append("\n");
+        // long a = nextInt();
+        // long b = nextInt();
+        // sb.append(pow(a, b,MOD)).append("\n");
+        long n = nextLong();
+        long ans = pow(1378,n);
+        sb.append((ans)%10);
     }
 
-    private static long pow(long a, long b,long mod) {
-        long result =1;
-        while(b>0){
-            if((b & 1)==1){
-                result = result*a%mod;
-            }
-            a=a*a%mod;
-            b >>= 1;
-        }
-        return ((result%mod)+mod)%mod;
+    // private static long binPow(long base, long power) {
+    //     long result= 1;
+    //     while(power>1){
+    //         if((power%2)==1){
+    //             result = result*base;
+    //             sb.append(result);
+    //         }
+
+    //         base = base*base;
+    //         power >>=1;
+    //     }
+    //     return result;
+    // }
+
+    private static long pow(long a, long b) {
+    long result =1;
+    while(b>0){
+    if((b & 1)==1){
+    result = result*a%10;
+    }
+    a=a*a%10;
+    b >>= 1;
+    }
+    return result;
     }
 }
