@@ -1,0 +1,74 @@
+package ZZZZZZZZZZZZ;
+
+import java.io.*;
+import java.util.*;
+
+public class CFFlowers {
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static StringTokenizer st;
+    static PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
+    static StringBuilder sb = new StringBuilder();
+
+    // Constants
+    static final long MOD  = 1_000_000_007L;
+    static final long MOD2 = 998_244_353L;
+    static final int  INF  = (int) 1e9;
+    static final long LINF = (long) 1e18;
+    static final double EPS = 1e-9;
+
+    // Local testing — change to false before submitting!
+    static final boolean LOCAL = true;
+
+    static String next() throws IOException {
+        while (st == null || !st.hasMoreTokens())
+            st = new StringTokenizer(br.readLine());
+        return st.nextToken();
+    }
+    static int nextInt() throws IOException { return Integer.parseInt(next()); }
+    static long nextLong() throws IOException { return Long.parseLong(next()); }
+    static double nextDouble() throws IOException { return Double.parseDouble(next()); }
+    static char nextChar() throws IOException { return next().charAt(0); }
+    static String nextLine() throws IOException {
+        st = null;
+        return br.readLine();
+    }
+
+    public static void main(String[] args) throws Exception {
+        if (LOCAL) {
+            br = new BufferedReader(new FileReader("../input.txt"));
+        }
+        int t = 1;       // change to nextInt() for multiple test cases
+        while (t-- > 0) solve();
+        out.print(sb);
+        out.flush();
+    }
+
+    static void solve() throws Exception {
+        int n =nextInt();
+        // long ans = binPow(2,n+1);
+        // sb.append(ans-2);
+        long[] arr = new long[n];
+        long min = Long.MAX_VALUE;
+        long max =Long.MIN_VALUE;
+        long countMax =0;
+        long countMin=0;
+        for(int i=0; i<n; i++){
+            arr[i] = nextLong();
+            if(arr[i]==min)countMin++;
+            if(arr[i]==max)countMax++;
+            if(min>arr[i]){
+                countMin=1;
+                min = arr[i];
+            }
+            if(max<arr[i]){
+                countMax=1;
+                max=arr[i];
+            }
+        }
+        if(max==min){
+            sb.append(max-min).append(" ").append(countMax*(countMin-1)/2);
+            return;
+        }
+        sb.append(max-min).append(" ").append(countMin*countMax);
+    }
+}

@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Exponentiation {
+public class ZZZZZotherPlatforms {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
     static PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
@@ -46,9 +46,9 @@ public class Exponentiation {
 
     public static void main(String[] args) throws Exception {
         if (LOCAL) {
-            br = new BufferedReader(new FileReader("../input.txt"));
+            br = new BufferedReader(new FileReader("input.txt"));
         }
-        int t = 1; // change to nextInt() for multiple test cases
+        int t = nextInt(); // change to nextInt() for multiple test cases
         while (t-- > 0)
             solve();
         out.print(sb);
@@ -56,37 +56,58 @@ public class Exponentiation {
     }
 
     static void solve() throws Exception {
-        // long a = nextInt();
-        // long b = nextInt();
-        // sb.append(pow(a, b,MOD)).append("\n");
-        long n = nextLong();
-        long ans = pow(1378,n);
-        sb.append((ans)%10);
+        // int n =nextInt();
+        // // long ans = binPow(2,n+1);
+        // // sb.append(ans-2);
+        // long[] arr = new long[n];
+        // long min = Long.MAX_VALUE;
+        // long max =Long.MIN_VALUE;
+        // long countMax =0;
+        // long countMin=0;
+        // for(int i=0; i<n; i++){
+        // arr[i] = nextLong();
+        // if(arr[i]==min)countMin++;
+        // if(arr[i]==max)countMax++;
+        // if(min>arr[i]){
+        // countMin=1;
+        // min = arr[i];
+        // }
+        // if(max<arr[i]){
+        // countMax=1;
+        // max=arr[i];
+        // }
+        // }
+        // if(max==min){
+        // sb.append(max-min).append(" ").append(countMax*(countMin-1)/2);
+        // return;
+        // }
+        // sb.append(max-min).append(" ").append(countMin*countMax);
+        String s = next();
+        int ans = 0;
+
+        char one = s.charAt(0);
+        ans += 25 * (one - 'a');
+
+        char two = s.charAt(1);
+        if(two>one){
+            ans += two-'a';
+        }else{
+            ans+= two-'a'+1;
+        }
+        sb.append(ans).append("\n");
+
     }
 
-    // private static long binPow(long base, long power) {
-    //     long result= 1;
-    //     while(power>1){
-    //         if((power%2)==1){
-    //             result = result*base;
-    //             sb.append(result);
-    //         }
+    // private static long binPow(long base, long power){
+    // long result =1;
 
-    //         base = base*base;
-    //         power >>=1;
-    //     }
-    //     return result;
+    // while(power>0){
+    // if((power&1)==1){
+    // result = result*base;
     // }
-
-    private static long pow(long a, long b) {
-    long result =1;
-    while(b>0){
-    if((b & 1)==1){
-    result = result*a%10;
-    }
-    a=a*a%10;
-    b >>= 1;
-    }
-    return result;
-    }
+    // base = base*base;
+    // power >>=1;
+    // }
+    // return result;
+    // }
 }
