@@ -82,21 +82,118 @@ public class ZZZZZotherPlatforms {
         // return;
         // }
         // sb.append(max-min).append(" ").append(countMin*countMax);
-        String s = next();
-        int ans = 0;
+        // String s = next();
+        // int ans = 0;
 
-        char one = s.charAt(0);
-        ans += 25 * (one - 'a');
+        // char one = s.charAt(0);
+        // ans += 25 * (one - 'a');
 
-        char two = s.charAt(1);
-        if(two>one){
-            ans += two-'a';
-        }else{
-            ans+= two-'a'+1;
+        // char two = s.charAt(1);
+        // if(two>one){
+        //     ans += two-'a';
+        // }else{
+        //     ans+= two-'a'+1;
+        // }
+        // sb.append(ans).append("\n");
+        // int totaldays = nextInt();
+        // int minDays = nextInt();
+        // int max_temp = nextInt();
+        // int[] arr = new int[totaldays];
+        // for(int i =0; i<totaldays; i++){
+        //     arr[i] = nextInt();
+            
+        // }
+        // long count =0;
+        // long length =0;
+        // for(int i =0; i<totaldays; i++){
+        //     length++;
+        //     if(arr[i]>max_temp){
+        //         if(length>=minDays){
+        //             count +=(((length-1)-minDays+1)*((length-1)-minDays+2))/2;
+        //         }
+        //         length=0;
+        //     }
+        // }
+        // if(length>=minDays){
+        //     count+=(((length)-minDays+1)*((length)-minDays+2))/2;
+        // }
+        // sb.append(count).append("\n");
+
+        //A. Pasha and Stick
+        // int n = nextInt();
+        // if((n&1)==1){
+        //     sb.append(0);
+        //     return;
+        // }
+        // sb.append((((n+2)/2)/2)-1);
+
+        // long n = nextInt();
+        // long ans = binPow(27,n)-binPow(7,n);
+        // sb.append(((ans%MOD)+MOD)%MOD).append("\n");
+        
+        //broken Keyboard
+        // int n = nextInt();
+        // int k = nextInt();
+        // String s = next();
+        // int[] freq =new int[26];
+        // char[] latinW =new char[k];
+        // for(int i=0; i<n; i++){
+        //     freq[s.charAt(i)-'a'] =0;
+        // }
+        // for(int i=0; i<k; i++){
+        //     latinW[i] = next().charAt(0);
+        //     freq[latinW[i]-'a']=1;
+        // }
+        // long count =0;
+        // long length =0;
+        // for(int i=0; i<n; i++){
+        //     length++;
+        //     if(freq[s.charAt(i)-'a'] == 0){
+        //         count+=(length-1)*(length)/2;
+        //         length=0;
+        //     }
+            
+        // }
+        // if(length>0)count+=(length+1)*(length)/2;;
+        // sb.append(count).append("\n");
+
+
+        // long participants=nextLong();
+        // long teams = nextLong();
+        // long minInATeam = participants/teams;
+        // long rem = participants%teams;
+        // long min =rem*((minInATeam+1)*minInATeam/2)+(teams-rem)*(minInATeam*(minInATeam-1)/2);
+
+        // long max = (participants-teams+1)*(participants-teams)/2;
+        // sb.append(min).append(" ").append(max).append("\n");
+
+        int n =nextInt();
+        int k = nextInt();
+        char[] c = new char[n];
+        Arrays.fill(c, 'a');
+        int i=1;
+        while(i<k){
+            k-=i;
+            i++;
         }
-        sb.append(ans).append("\n");
+        c[n-i-1] ='b';
+        c[n-k] ='b';
+        sb.append(new String(c)).append("\n");
 
     }
+
+    // private static long binPow(long base, long power){
+    //     long res =1;
+    //     base %= MOD;
+    //     while(power>0){
+    //         if((power&1)==1){
+    //             res = res*base%MOD;
+    //         }
+    //         base = base *base%MOD;
+    //         power>>=1;
+    //     }
+    //     return res;
+    // }
 
     // private static long binPow(long base, long power){
     // long result =1;
