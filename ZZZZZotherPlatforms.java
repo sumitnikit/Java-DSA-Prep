@@ -167,20 +167,21 @@ public class ZZZZZotherPlatforms {
         // long max = (participants-teams+1)*(participants-teams)/2;
         // sb.append(min).append(" ").append(max).append("\n");
 
-        int n =nextInt();
-        int k = nextInt();
-        char[] c = new char[n];
-        Arrays.fill(c, 'a');
-        int i=1;
-        while(i<k){
-            k-=i;
-            i++;
-        }
-        c[n-i-1] ='b';
-        c[n-k] ='b';
-        sb.append(new String(c)).append("\n");
-
+        // int n =nextInt();
+        // int k = nextInt();
+        // char[] c = new char[n];
+        // Arrays.fill(c, 'a');
+        // int i=1;
+        // while(i<k){
+        //     k-=i;
+        //     i++;
+        // }
+        // c[n-i-1] ='b';
+        // c[n-k] ='b';
+        // sb.append(new String(c)).append("\n");
+        int a = nextInt();
     }
+
 
     // private static long binPow(long base, long power){
     //     long res =1;
