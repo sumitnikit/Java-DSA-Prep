@@ -1,7 +1,9 @@
+package Phase_Two.Day5;
+
 import java.io.*;
 import java.util.*;
 
-public class TPrime {
+public class Set {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
     static PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
@@ -33,9 +35,8 @@ public class TPrime {
 
     public static void main(String[] args) throws Exception {
         if (LOCAL) {
-            br = new BufferedReader(new FileReader("input.txt"));
+            br = new BufferedReader(new FileReader("../input.txt"));
         }
-        
         int t = 1;       // change to nextInt() for multiple test cases
         while (t-- > 0) solve();
         out.print(sb);
@@ -43,34 +44,34 @@ public class TPrime {
     }
 
     static void solve() throws Exception {
-        int n = nextInt();
-        long[] arr = new long[n];
-        for(int i=0; i<n; i++){
-            arr[i]=nextLong();
-            boolean isPrime =true;
-            long squareRoot=(int)Math.sqrt(arr[i]);
-            if(squareRoot < 2){
-                sb.append("NO").append("\n");
-                continue;
+        int q = nextInt();
+        Set<Integer> st = new TreeSet<>();
+        while(q-->0){
+            String s = next();
+            if(s.equals("add")){
+                int x = nextInt();
+                st.add(x);
+            }else if(s.equals("remove")){
+                int x = nextInt();
+                st.remove(x);
+            }else if(s.equals("find")){
+                int x = nextInt();
+                int y= st.size();
+                st.add(x);
+                if(y==st.size())sb.append("YES").append("\n");
+                else sb.append("NO").append("\n");
+            }else if(s.equals("print")){
+                int x = nextInt();
+                
+                    for(int t :st){
+                        sb.append(t).append(" ");
+                    }
+                    sb.append("\n");
+                
+                
+            }else{
+                st.clear();
             }
-            if(squareRoot*squareRoot!=arr[i]){
-                sb.append("NO").append("\n");
-                continue;
-            }
-            
-            for(int j=2; 1L*j*j<=squareRoot; j++){
-                if(squareRoot%j==0){
-                    sb.append("NO").append("\n");
-                    isPrime=false;
-                    break;
-                }
-            }
-            if(isPrime){
-                sb.append("YES").append("\n");
-            }
-            
         }
-        
     }
-   
 }
