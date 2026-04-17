@@ -1,11 +1,8 @@
 1
-9
-add alice 24
-add bob 21
-add alice 23
-add alice 22
-print alice
-erase alice
-print alice
-eraseall alice
-print alice
+6
+add 4
+add 1
+add 6
+find 1
+findpos 7
+findpos 6
