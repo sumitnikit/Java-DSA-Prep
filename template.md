@@ -182,4 +182,15 @@ public class Main {
         // output      → sb.append(answer).append("\n")
         // two values  → sb.append(a + " " + b).append("\n")
     }
+
+    // 2 ints → long key
+long key = ((long)a << 32) | (b & 0xFFFFFFFFL);
+
+// decode back
+int a = (int)(key >> 32);
+int b = (int)(key);
+
+// 2 longs or triplet → String key  
+String key = a + "," + b;
+String key = a + "," + b + "," + c;
 }
